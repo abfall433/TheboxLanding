@@ -10,7 +10,7 @@ const Avis = () => {
       name: "Pierre M.",
       rating: 5,
       date: "Il y a 2 jours",
-      comment: "Excellent service ! Alexandre est un vrai professionnel, j'y retournerai sans hésiter. L'ambiance du salon est top.",
+      comment: "Excellent service ! Saracide est un vrai professionnel, j'y retournerai sans hésiter. L'ambiance du salon est top.",
       service: "Coupe + Barbe",
       verified: true
     },
