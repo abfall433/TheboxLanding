@@ -11,7 +11,7 @@ const About = () => {
           <div>
             <div className="w-12 h-1 bg-red-600 mb-6"></div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-              L'Art de la <span className="text-red-500">Barberie</span>
+              L'Art de la <span className="text-red-500">Coupe</span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
               Chez THE BOX, nous transformons une simple visite chez le barbier en une 
