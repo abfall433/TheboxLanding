@@ -1,4 +1,6 @@
-
+import Abdel from "../assets/abdel.png"
+import Saracide from "../assets/saracide.png"
+import Zak from "../assets/zak.png"
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -7,32 +9,32 @@ import { Star, Calendar, Scissors } from 'lucide-react';
 const Equipe = () => {
   const teamMembers = [
     {
-      name: "Alexandre Martin",
-      role: "Fondateur & Barbier Expert",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
+      name: "Zak",
+      role: " Barbier Senior",
+      image: Zak,
       experience: "12 ans d'expérience",
-      specialties: ["Coupes classiques", "Barbe traditionnelle", "Styling vintage"],
-      description: "Passionné par l'art de la barberie depuis plus d'une décennie, Alexandre a fondé THE BOX pour offrir une expérience premium à Rouen.",
+      specialties: ["Coupes classiques", "Styling vintage"],
+      description: "Passionné par l'art de la coupe depuis plus d'une décennie, zak a fondé THE BOX pour offrir une expérience premium à Rouen.",
       rating: 4.9,
       reviews: 89
     },
     {
-      name: "Thomas Dubois",
+      name: "Saracide",
       role: "Barbier Senior",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+      image: Saracide,
       experience: "8 ans d'expérience",
       specialties: ["Coupes modernes", "Dégradés", "Barbe design"],
-      description: "Spécialiste des coupes tendances et des techniques modernes, Thomas apporte créativité et précision à chaque prestation.",
+      description: "Spécialiste des coupes tendances et des techniques modernes, Saracide apporte créativité et précision à chaque prestation.",
       rating: 4.8,
       reviews: 67
     },
     {
-      name: "Julie Moreau",
-      role: "Barbière & Spécialiste Soins",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=1000&auto=format&fit=crop",
+      name: "Abdel",
+      role: "Barbier Senior",
+      image: Abdel,
       experience: "6 ans d'expérience",
-      specialties: ["Soins visage", "Coupes femmes", "Conseils styling"],
-      description: "Experte en soins du visage masculin et techniques de coupe, Julie apporte une approche douce et professionnelle.",
+      specialties: ["Coupes modernes", "Dégradés", "Barbe design"],
+      description: "Spécialiste des coupes tendances et des techniques modernes, Abdel apporte créativité et précision à chaque prestation.",
       rating: 4.9,
       reviews: 54
     }

@@ -16,18 +16,9 @@ const GalleryPreview = () => {
       src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1000&auto=format&fit=crop",
       alt: "Soin barbe"
     },
-    {
-      src: "https://images.unsplash.com/photo-1521490878867-2bca2bc1c92b?q=80&w=1000&auto=format&fit=crop",
-      alt: "Coupe dégradé"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1584369584011-b8821015a39c?q=80&w=1000&auto=format&fit=crop",
-      alt: "Barbier travail"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1599351431613-37ad8c737b3d?q=80&w=1000&auto=format&fit=crop",
-      alt: "Résultat coupe"
-    }
+    
+   
+    
   ];
 
   return (

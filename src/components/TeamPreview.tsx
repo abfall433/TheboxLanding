@@ -1,4 +1,6 @@
-
+import Abdel from "../assets/abdel.png"
+import Saracide from "../assets/saracide.png"
+import Zak from "../assets/zak.png"
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook } from 'lucide-react';
@@ -6,26 +8,26 @@ import { Instagram, Facebook } from 'lucide-react';
 const TeamPreview = () => {
   const team = [
     {
-      name: "Alexandre",
-      role: "Fondateur & Barbier Expert",
-      speciality: "Coupes modernes & Barbes",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+      name: "Abdel",
+      role: "Barbier Senior",
+      speciality: "Dégradés & Styling",
+      image: Abdel,
       instagram: "@alex_thebox",
       facebook: "alexandre.barbier"
     },
     {
-      name: "Thomas",
+      name: "Zak",
       role: "Barbier Senior",
       speciality: "Dégradés & Styling",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+      image: Zak,
       instagram: "@thomas_cuts",
       facebook: "thomas.barbier"
     },
     {
-      name: "Julie",
-      role: "Spécialiste Soins",
-      speciality: "Soins visage & Détente",
-      image: "https://images.unsplash.com/photo-1494790108755-2616c96956db?q=80&w=400&auto=format&fit=crop",
+      name: "Saracide",
+      role: "Barbier Senior",
+      speciality: "Dégradés & Styling ",
+      image: Saracide,
       instagram: "@julie_beauty",
       facebook: "julie.soins"
     }

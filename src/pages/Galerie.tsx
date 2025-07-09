@@ -24,21 +24,6 @@ const Galerie = () => {
       category: "Barbe"
     },
     {
-      src: "https://images.unsplash.com/photo-1521490878867-2bca2bc1c92b?q=80&w=1000&auto=format&fit=crop",
-      alt: "Coupe scissor over comb",
-      category: "Coupes"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1584369584011-b8821015a39c?q=80&w=1000&auto=format&fit=crop",
-      alt: "Barbier au travail",
-      category: "Salon"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1599351431613-37ad8c737b3d?q=80&w=1000&auto=format&fit=crop",
-      alt: "Résultat coupe pompadour",
-      category: "Coupes"
-    },
-    {
       src: "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?q=80&w=1000&auto=format&fit=crop",
       alt: "Taille de barbe précise",
       category: "Barbe"
@@ -47,11 +32,6 @@ const Galerie = () => {
       src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1000&auto=format&fit=crop",
       alt: "Ambiance industrielle",
       category: "Salon"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1618439884194-10f7f9ec4629?q=80&w=1000&auto=format&fit=crop",
-      alt: "Coupe texturisée",
-      category: "Coupes"
     },
     {
       src: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
