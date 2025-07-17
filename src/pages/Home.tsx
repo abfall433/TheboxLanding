@@ -87,7 +87,6 @@ const Home = () => {
           className="absolute inset-0 bg-cover bg-center bg-fixed grayscale animate-hero-bg"
           style={{
             backgroundImage: `url('/lovable-uploads/a188cbf1-750f-4493-aea8-9af87b01a1ad.png')`,
-            backgroundAttachment: 'fixed'
           }}
         >
           {/* Dark Overlay with animated opacity */}
