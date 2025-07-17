@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 import { Scissors, Star, Clock, Award, Users, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import BOX from "../assets/thebox.png"
+import ABDEL from "../assets/abdel.png"
+import ZAK from "../assets/zak.png"
+import P1 from "../assets/real1.jpg"
+import P2 from "../assets/real2.jpg"
+import P3 from "../assets/real3.jpg"
+import P4 from "../assets/real4.jpg"
+import P5 from "../assets/real5.jpg"
+import P6 from "../assets/real6.jpg"
+import SARACIDE from "../assets/saracide.png"
+
+
 
 const Home = () => {
   const services = [
@@ -28,32 +40,27 @@ const Home = () => {
 
   const team = [
     {
-      name: 'Marcus',
-      specialty: 'Coupes modernes',
+      name: 'Saracide',
+      specialty: 'Barbier expert',
       experience: '8 ans',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
+      image: SARACIDE
     },
     {
-      name: 'Thomas',
+      name: 'Abdel',
       specialty: 'Barbier expert',
       experience: '6 ans',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
+      image: ABDEL
     },
     {
-      name: 'Alexandre',
-      specialty: 'Colorations',
+      name: 'Zak',
+      specialty: 'Barbier Expert',
       experience: '5 ans',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face'
+      image: ZAK
     }
   ];
 
   const gallery = [
-    'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=300&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=300&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1559599101-f09722fb4948?w=300&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1605497788516-7a08fe6d48b7?w=300&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1616951849649-74dd2dd7e662?w=300&h=300&fit=crop'
+    P1,P2,P3,P4,P5,P6
   ];
 
   const testimonials = [
@@ -156,14 +163,14 @@ const Home = () => {
                   <Scissors className="text-white" size={24} />
                 </div>
                 <div>
-                  <p className="font-semibold text-black">Julien Dubois</p>
-                  <p className="text-gray-600">Fondateur & Master Barber</p>
+                  <p className="font-semibold text-black">Abdel</p>
+                  <p className="text-gray-600">Fondateur &  Barber Expert</p>
                 </div>
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <img
-                src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?w=600&h=400&fit=crop"
+                src={BOX}
                 alt="Intérieur salon The Box"
                 className="w-full h-64 md:h-96 object-cover grayscale shadow-xl rounded-lg"
               />
