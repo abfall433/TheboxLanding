@@ -1,91 +1,100 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Instagram, Facebook, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-gray-800">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo & Description */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="mb-6">
-              <h3 className="text-3xl font-black text-white tracking-wider mb-2">THE BOX</h3>
-              <p className="text-gray-400 text-sm tracking-widest">BARBER SHOP</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Newsletter */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-display font-semibold">NEWSLETTER</h3>
+            <p className="text-gray-400 text-sm">
+              Restez au courant des dernières tendances et offres spéciales.
+            </p>
+            <div className="flex">
+              <Input 
+                placeholder="Votre email"
+                className="bg-white/10 border-white/20 text-white placeholder-gray-400"
+              />
+              <Button className="btn-primary ml-2">
+                REJOINDRE
+              </Button>
             </div>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              L'excellence masculine à Rouen. Découvrez l'art de la coiffure dans une ambiance 
-              industrielle et moderne, où chaque détail compte pour révéler votre style unique.
+          </div>
+
+          {/* Réseaux Sociaux */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-display font-semibold">SUIVEZ-NOUS</h3>
+            <p className="text-gray-400 text-sm">
+              Découvrez nos dernières réalisations sur nos réseaux sociaux.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                <Instagram className="h-6 w-6" />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                 className="bg-white/10 p-3 rounded-full hover:bg-box-red transition-colors duration-200">
+                <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                <Facebook className="h-6 w-6" />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                 className="bg-white/10 p-3 rounded-full hover:bg-box-red transition-colors duration-200">
+                <Facebook size={20} />
               </a>
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-white font-bold text-lg mb-6">Contact</h4>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-red-500 mr-3 mt-1 flex-shrink-0" />
-                <div className="text-gray-400">
-                  <div>123 Rue de la République</div>
-                  <div>76000 Rouen</div>
+          {/* Liens */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-display font-semibold">INFORMATIONS</h3>
+            <div className="space-y-2">
+              <Link to="/services" className="block text-gray-400 hover:text-white transition-colors duration-200">
+                Nos Services
+              </Link>
+              <Link to="/equipe" className="block text-gray-400 hover:text-white transition-colors duration-200">
+                Notre Équipe
+              </Link>
+              <Link to="/galerie" className="block text-gray-400 hover:text-white transition-colors duration-200">
+                Galerie
+              </Link>
+              <Link to="/avis" className="block text-gray-400 hover:text-white transition-colors duration-200">
+                Avis Clients
+              </Link>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-display font-semibold">CONTACT</h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <MapPin size={16} className="text-box-red" />
+                <span className="text-gray-400 text-sm">123 Rue de la République<br />76000 Rouen</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone size={16} className="text-box-red" />
+                <span className="text-gray-400 text-sm">02 35 XX XX XX</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail size={16} className="text-box-red" />
+                <span className="text-gray-400 text-sm">contact@thebox-rouen.fr</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock size={16} className="text-box-red" />
+                <div className="text-gray-400 text-sm">
+                  <div>Mar-Sam: 9h-19h</div>
+                  <div>Dim-Lun: Fermé</div>
                 </div>
               </div>
-              <div className="flex items-center">
-                <Phone className="h-5 w-5 text-red-500 mr-3" />
-                <span className="text-gray-400">02 35 XX XX XX</span>
-              </div>
-              <div className="flex items-center">
-                <Mail className="h-5 w-5 text-red-500 mr-3" />
-                <span className="text-gray-400">contact@thebox-rouen.fr</span>
-              </div>
             </div>
-          </div>
-
-          {/* Hours */}
-          <div>
-            <h4 className="text-white font-bold text-lg mb-6">Horaires</h4>
-            <div className="space-y-2 text-gray-400">
-              <div className="flex justify-between">
-                <span>Lun - Ven</span>
-                <span>9h - 19h</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Samedi</span>
-                <span>9h - 18h</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Dimanche</span>
-                <span className="text-red-500">Fermé</span>
-              </div>
-            </div>
-            
-            <a 
-              href="https://www.planity.com/the-box-76000-rouen"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full mt-6 bg-red-600 hover:bg-red-700 text-white py-3 font-semibold transition-colors duration-200 block text-center"
-            >
-              Prendre RDV sur Planity
-            </a>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-500 text-sm mb-4 md:mb-0">
-            © 2024 THE BOX Barber Shop. Tous droits réservés.
-          </div>
-          <div className="flex space-x-6 text-gray-500 text-sm">
-            <a href="#" className="hover:text-white transition-colors duration-200">Mentions légales</a>
-            <a href="#" className="hover:text-white transition-colors duration-200">Politique de confidentialité</a>
-          </div>
+        <div className="border-t border-white/10 mt-12 pt-8 text-center">
+          <p className="text-gray-400 text-sm">
+            © 2024 THE BOX | COIFFURE MASCULINE - Tous droits réservés
+          </p>
         </div>
       </div>
     </footer>

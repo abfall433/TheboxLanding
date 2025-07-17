@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/f905f649-39c3-4695-81aa-53215428657f
+**URL**: https://lovable.dev/projects/0aaa0ae1-1a57-4816-b2fe-9195783a33b3
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f905f649-39c3-4695-81aa-53215428657f) and start prompting.
+Simply visit the [Lovable Project](https://lovable.dev/projects/0aaa0ae1-1a57-4816-b2fe-9195783a33b3) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -62,7 +62,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/f905f649-39c3-4695-81aa-53215428657f) and click on Share -> Publish.
+Simply open [Lovable](https://lovable.dev/projects/0aaa0ae1-1a57-4816-b2fe-9195783a33b3) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
@@ -71,4 +71,3 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
-# TheboxLanding

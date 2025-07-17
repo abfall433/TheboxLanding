@@ -1,112 +1,137 @@
 
-import React, { useState } from 'react';
-import { Menu, X, Scissors } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Instagram, Facebook, Search, User, ShoppingBag, Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
-    { name: 'Accueil', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Équipe', href: '/equipe' },
-    { name: 'Galerie', href: '/galerie' },
-    { name: 'Avis', href: '/avis' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Accueil', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Équipe', path: '/equipe' },
+    { name: 'Galerie', path: '/galerie' },
+    { name: 'Avis', path: '/avis' },
+    { name: 'Contact', path: '/contact' }
   ];
-
-  const isActive = (href: string) => location.pathname === href;
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
-              <div className="bg-red-600 p-2 rounded">
-                <Scissors className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              </div>
-              <div>
-                <div className="text-white font-black text-lg sm:text-xl tracking-wider">THE BOX</div>
-                <div className="text-gray-400 text-xs font-medium tracking-widest">BARBER SHOP</div>
-              </div>
-            </Link>
+      {/* Main Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${
+        isHomePage 
+          ? (isScrolled ? 'top-0 bg-black/95 backdrop-blur-sm' : 'bg-transparent')
+          : 'top-0 bg-black/95 backdrop-blur-sm'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Social Icons - Left */}
+            <div className="hidden md:flex items-center space-x-4">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                 className="text-white hover:text-box-red transition-colors duration-200">
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                 className="text-white hover:text-box-red transition-colors duration-200">
+                <Facebook size={20} />
+              </a>
+            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            {/* Logo - Center */}
+            <div className="flex-1 flex justify-center">
+              <Link to="/" className="text-center">
+                <div className="text-white font-display text-2xl font-bold tracking-wider">
+                  THE BOX
+                </div>
+                <div className="w-16 h-0.5 bg-box-red mx-auto mt-1"></div>
+              </Link>
+            </div>
+
+            {/* Action Icons - Right */}
+            <div className="hidden md:flex items-center space-x-4">
+              <button className="text-white hover:text-box-red transition-colors duration-200">
+                <Search size={20} />
+              </button>
+              <button className="text-white hover:text-box-red transition-colors duration-200">
+                <User size={20} />
+              </button>
+              <button className="text-white hover:text-box-red transition-colors duration-200">
+                <ShoppingBag size={20} />
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-white hover:text-box-red transition-colors duration-200"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop Navigation Menu */}
+          <div className="hidden md:flex items-center justify-center py-4 border-t border-white/10">
+            <div className="flex space-x-8">
               {navItems.map((item) => (
                 <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`transition-colors duration-200 font-medium text-sm xl:text-base ${
-                    isActive(item.href)
-                      ? 'text-red-500 border-b-2 border-red-500 pb-1'
-                      : 'text-gray-300 hover:text-white'
+                  key={item.path}
+                  to={item.path}
+                  className={`text-white hover:text-box-red transition-colors duration-200 font-medium tracking-wide ${
+                    location.pathname === item.path ? 'text-box-red' : ''
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <button className="bg-red-600 hover:bg-red-700 text-white px-4 xl:px-6 py-2 rounded-md font-semibold transition-colors duration-200 text-sm xl:text-base">
-                Prendre RDV
-              </button>
             </div>
-
-            {/* Tablet Navigation - Hidden nav items, show only RDV button */}
-            <div className="hidden md:flex lg:hidden items-center space-x-4">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-semibold transition-colors duration-200 text-sm">
-                Prendre RDV
-              </button>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-white p-2"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-black border-t border-gray-800">
-            <div className="px-4 py-6 space-y-4">
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-sm">
+            <div className="px-4 py-4 space-y-4">
               {navItems.map((item) => (
                 <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-red-500'
-                      : 'text-gray-300 hover:text-white'
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block text-white hover:text-box-red transition-colors duration-200 font-medium ${
+                    location.pathname === item.path ? 'text-box-red' : ''
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <button className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-md font-semibold transition-colors duration-200 mt-4 md:hidden">
-                Prendre RDV
-              </button>
+              <div className="flex items-center space-x-4 pt-4 border-t border-white/10">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                   className="text-white hover:text-box-red transition-colors duration-200">
+                  <Instagram size={20} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                   className="text-white hover:text-box-red transition-colors duration-200">
+                  <Facebook size={20} />
+                </a>
+              </div>
             </div>
           </div>
         )}
       </nav>
-
-      {/* Sticky CTA Button - Mobile only */}
-      <button className="fixed bottom-6 right-6 z-40 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 md:hidden">
-        Prendre RDV
-      </button>
     </>
   );
 };
