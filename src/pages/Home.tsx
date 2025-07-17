@@ -84,7 +84,7 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax Effect */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed grayscale animate-hero-bg"
+          className="absolute inset-0 bg-cover bg-center  grayscale animate-hero-bg"
           style={{
             backgroundImage: `url('/lovable-uploads/a188cbf1-750f-4493-aea8-9af87b01a1ad.png')`,
           }}
